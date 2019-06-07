@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block principal%}
+
+<div class="container detalle-wrapper">
+    {% block especifico%}
+
+    <div class="container">
+
+        <div class="col img-conte-detalle">
+
+            <p class="card-text">Su solicitud ha sido procesada satisfactoriamente</p>
+            <a class="btn-danger" href="{% url 'panel' %}">Volver al panel administrativo</a>
+
+        </div>
+    </div>
+
+    {% endblock %}
+</div>
+
+{% endblock %}

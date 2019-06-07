@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block principal%}
+
+<div class="container">
+    {% block especifico%}
+
+    <div class="container detalle-wrapper">
+
+        <div class="col img-conte-detalle">
+            <h4>{{ contenido.titulo }}</h4>
+            <p class="card-text"> Fecha del evento: <br /> {{ contenido.fecha_del_evento }}</p>
+            <img src="{{ contenido.imagen.url }}" class="card-img-top img-fluid img-detalle" alt="{{ contenido.titulo }}">
+            <p class="card-text">{{ contenido.texto_descripcion }}</p>
+
+        </div>
+    </div>
+
+    {% endblock %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+
+{% block principal%}
+
+<div class="container">
+    {% block especifico%}
+    <div class="w-100 text-center h3 m-2">Administración de Contenido de Noticias</div>
+    <a href="{% url 'lista_de_noticias' %}" class="btn btn-primary btn-lg btn-block">Ver lista de Noticias</a>
+
+
+    <div class="w-100 text-center h3 m-2">Administración de Contenido de Eventos</div>
+    <a href="{% url 'lista_de_eventos' %}" class="btn btn-secondary btn-lg btn-block">Ver lista de Eventos</a>
+
+
+    {% endblock %}
+</div>
+
+{% endblock %}

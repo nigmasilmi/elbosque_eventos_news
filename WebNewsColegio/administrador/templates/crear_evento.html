@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block principal%}
+<h3 class="text-center">Crear Evento</h3>
+<div class="container">
+    {% block especifico%}
+    <div class="row">
+        <div class="col text-left">
+            <form class="form-group" action="{% url 'crear_evento' %}" method="POST">
+                {% csrf_token %}
+               <div class="formularios"> {{ form.as_p }}
+
+                <a href="{% url 'hecho' %}" class="btn-danger" type="submit">Crear Evento</a>
+               </div>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+</div>
+{% endblock %}

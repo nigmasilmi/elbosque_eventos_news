@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block principal%}
+
+<div class="container">
+    <div class="row">
+        {% block especifico%}
+        {% for elemento in eventos_ppal.all %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ elemento.imagen.url }}" class="card-img-top" alt="{{ elemento.titulo }}">
+                <div class="card-body">
+                    <em>{{ elemento.tipo }}</em>
+                    <h5 class="card-title">{{ elemento.titulo }}</h5>
+                    <p class="card-text">{{ elemento.titulo }}</p>
+                    <a href="{% url 'evento_detalle' elemento.id %}" class="btn btn-primary">Leer más</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="row">
+        {% for elemento in noticias_ppal.all %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ elemento.imagen.url }}" class="card-img-top" alt="{{ elemento.titulo }}">
+                <div class="card-body">
+                    <em>{{ elemento.tipo }}</em>
+                    <h5 class="card-title">{{ elemento.titulo }}</h5>
+                    <p class="card-text">{{ elemento.titulo }}</p>
+                    <a href="{% url 'detalle_noticia' elemento.id %}" class="btn btn-primary">Leer más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endblock %}
+</div>
+
+{% endblock %}

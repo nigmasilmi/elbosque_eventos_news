@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block principal%}
+
+<div class="container detalle-wrapper">
+    {% block especifico%}
+
+    <div class="container">
+
+        <div class="col img-conte-detalle">
+            <h4>{{ contenido.titulo }}</h4>
+            <p class="card-text">Noticia publicada el {{ contenido.fecha_de_publicacion }}</p>
+            <p>Ha sido eliminada</p>
+
+        </div>
+    </div>
+
+    {% endblock %}
+</div>
+
+{% endblock %}

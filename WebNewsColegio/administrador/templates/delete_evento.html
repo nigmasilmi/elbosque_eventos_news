@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block principal%}
+
+<div class="container detalle-wrapper">
+    {% block especifico%}
+
+    <div class="container">
+
+        <div class="col img-conte-detalle">
+            <h4>{{ contenido.titulo }}</h4>
+            <img src="{{ contenido.imagen.url }}" class="card-img-top img-fluid img-detalle"
+                 alt="{{ contenido.titulo }}">
+            <br/>
+            <em>{{ elemento.tipo }}</em> ID: <em>{{ contenido.id }}</em>
+            <h5 class="card-title">{{ contenido.titulo }}</h5>
+            <p class="card-text">{{ contenido.texto_resumen }}</p>
+            <p class="card-text">Fecha del Evento: <br/> {{ contenido.fecha_del_evento }} h</p>
+            <a href="#" class="btn btn-primary">Confirmar eliminar evento</a>
+
+        </div>
+    </div>
+
+    {% endblock %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block principal%}
+
+<div class="container">
+    <a href="{% url 'crear_noticia' %}" class="btn btn-primary btn-lg btn-block">Crear Nueva Noticia</a>
+    <br />
+    <div class="row">
+
+        {% for elemento in noticias.all %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ elemento.imagen.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <em>{{ elemento.tipo }}</em> ID: <em>{{ elemento.id }}</em>
+                    <h5 class="card-title">{{ elemento.titulo }}</h5>
+                    <p class="card-text">{{ elemento.texto_resumen }}</p>
+                    <p class="card-text">Fecha de publicación: <br/> {{ elemento.fecha_de_publicacion }} h</p>
+                    <a href="{% url 'update_noticia' elemento.id %}" class="btn btn-primary">Editar</a>
+                    <a href="{% url 'delete_noticia' elemento.id %}" class="btn btn-primary">Eliminar</a>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
